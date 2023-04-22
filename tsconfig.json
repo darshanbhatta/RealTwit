@@ -38,5 +38,5 @@
         "webpack/plugins/custom/.ts"
     ],
     "files": ["src/background/data/verified_users.json"],
-    "exclude": ["node_modules", "**/.*/", "build"]
+    "exclude": ["node_modules", "**/.*/", "build", "Website"]
 }

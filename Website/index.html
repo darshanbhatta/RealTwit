@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SKG4B5Z815"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-SKG4B5Z815");
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicons/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>RealTwit - See Real Twitter Blue Checkmarks</title>
+    <meta name="title" content="RealTwit - See Real Twitter Blue Checkmarks" />
+    <meta
+      name="description"
+      content="See real verified users! RealTwit shows you who's really verified on Twitter."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://realtwit.org/" />
+    <meta
+      property="og:title"
+      content="RealTwit - See Real Twitter Blue Checkmarks"
+    />
+    <meta
+      property="og:description"
+      content="See real verified users! RealTwit shows you who's really verified on Twitter."
+    />
+    <meta property="og:image" content="/back.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://realtwit.org/" />
+    <meta
+      property="twitter:title"
+      content="RealTwit - See Real Twitter Blue Checkmarks"
+    />
+    <meta
+      property="twitter:description"
+      content="See real verified users! RealTwit shows you who's really verified on Twitter."
+    />
+    <meta property="twitter:image" content="/back.png" />
+  </head>
+  <body class="font-inter antialiased bg-white text-gray-900 tracking-tight">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      if (localStorage.getItem("sidebar-expanded") == "true") {
+        document.querySelector("body").classList.add("sidebar-expanded");
+      } else {
+        document.querySelector("body").classList.remove("sidebar-expanded");
+      }
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
