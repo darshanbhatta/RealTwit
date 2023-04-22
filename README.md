@@ -1,3 +1,6 @@
+[![Discord](https://img.shields.io/discord/1099338934921740371?label=Discord&style=flat&logo=discord)](https://discord.gg/vpBxgyynCR)
+[![License](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat)](https://github.com/darshanbhatta/RealTwit/blob/main/LICENSE)
+
 # RealTwit - See who's really verified on Twitter
 
 <p align="center">
