@@ -1,6 +1,12 @@
 /* eslint-disable no-param-reassign */
 import crypto from 'crypto';
 
+/**
+ * Encrypts the given text using the given key
+ * @param text text you want to encrypt
+ * @param ENCRYPTION_KEY the key you want to use to encrypt the text
+ * @returns the encrypted text
+ */
 function encrypt(text: any, ENCRYPTION_KEY: string): string {
     if (!text) return text;
     text = JSON.stringify(text);
@@ -11,6 +17,12 @@ function encrypt(text: any, ENCRYPTION_KEY: string): string {
     return encrypted.toString('hex');
 }
 
+/**
+ * Decrypts the given text using the given key
+ * @param text text you want to decrypt
+ * @param ENCRYPTION_KEY the key you want to use to decrypt the text
+ * @returns the decrypted text
+ */
 function decrypt(text: any, ENCRYPTION_KEY: string): any {
     const hexRegex = /^[0-9A-Fa-f]+$/g;
     if (!(typeof text === 'string' || text instanceof String)) return text;

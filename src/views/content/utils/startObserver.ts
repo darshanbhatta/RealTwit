@@ -3,6 +3,9 @@ import findAllUserContainers, { UserContainer } from './findAllUserContainers';
 // use to not update too often
 let debounceTimeout: NodeJS.Timeout | null = null;
 
+/**
+ * Starts the observer to look for new added nodes to fetch the user containers
+ */
 export default function startObserver(callback: (foundContainers: UserContainer[]) => void): MutationObserver {
     const observer = new MutationObserver(mutations => {
         try {

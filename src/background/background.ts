@@ -37,6 +37,7 @@ const messageListener = new MessageListener<BACKGROUND_MESSAGES>({
 
 messageListener.listen();
 
+// listen for tab updates to know when the page has changed (useful for single page apps that don't reinject the content script)
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (changeInfo.status === 'complete') {
         console.log('tab updated', tabId);

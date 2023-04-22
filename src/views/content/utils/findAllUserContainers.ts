@@ -1,8 +1,15 @@
+/**
+ * Represents a user container on a page
+ */
 export type UserContainer = {
     username: string;
     element: HTMLElement;
 };
 
+/**
+ * Finds all injectable user containers on a page along with their username
+ * @returns
+ */
 export default function findAllUserContainers(): UserContainer[] {
     const userContainers = [findFromTweets, findFromDM, findFromNotifications, findFromSearch, findFromHoverCard]
         .map(fn => fn())
@@ -14,6 +21,7 @@ export default function findAllUserContainers(): UserContainer[] {
 function findFromTweets(): UserContainer[] {
     const userContainers = document.querySelectorAll('[data-testid="User-Name"]');
     const userContainer2 = document.querySelectorAll('[data-testid="UserName"]');
+
     return [...Array.from(userContainers), ...Array.from(userContainer2)]
         .map(element => {
             // find username in a tag with
@@ -39,8 +47,8 @@ function findFromTweets(): UserContainer[] {
 }
 
 function findFromDM(): UserContainer[] {
-    // use data-testid="conversation" then get the a tag and get the href then get the username container span (first one)
     const userContainers = document.querySelectorAll('[data-testid="conversation"]');
+
     return Array.from(userContainers)
         .map(element => {
             // find username in a tag
@@ -70,6 +78,7 @@ function findFromDM(): UserContainer[] {
 }
 
 function findFromNotifications(): UserContainer[] {
+    // we only want to run this on the notifications page
     if (!isInPage('/notifications')) return [];
 
     // find each container article role="article"
@@ -91,6 +100,7 @@ function findFromNotifications(): UserContainer[] {
 function findFromSearch(): UserContainer[] {
     const userContainers = document.querySelectorAll('[data-testid="UserCell"]');
     const typeaheadUserContainers = document.querySelectorAll('[data-testid="TypeaheadUser"]');
+
     return [...Array.from(userContainers), ...Array.from(typeaheadUserContainers)]
         .map(element => {
             // get last div in the element
@@ -112,8 +122,8 @@ function findFromSearch(): UserContainer[] {
 }
 
 function findFromHoverCard(): UserContainer[] {
-    // find all HoverCard divs
     const userContainers = document.querySelectorAll('[data-testid="HoverCard"]');
+
     return Array.from(userContainers)
         .map(element => {
             // find username in a tag

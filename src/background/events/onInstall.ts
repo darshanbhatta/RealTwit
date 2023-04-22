@@ -19,7 +19,6 @@ function logOnInstallEvent() {
         const INSTALL_KEY = `${manifest.short_name}-installed`;
         const storage = await chrome.storage.sync.get(INSTALL_KEY);
         if (!storage[INSTALL_KEY]) {
-            // TODO: send install event
             await chrome.storage.sync.set({ [INSTALL_KEY]: true });
         }
     }, 5 * SECOND);

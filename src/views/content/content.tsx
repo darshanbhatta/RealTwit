@@ -3,12 +3,12 @@ import { ContextInvalidated, onContextInvalidated } from 'chrome-extension-toolk
 import { createRoot } from 'react-dom/client';
 import { Main } from './components/Main/Main';
 
+// inject our app if they are on twitter
 if (window.location.href.includes('https://twitter.com')) {
     injectReact();
 }
 
 async function injectReact() {
-    // create div to render <Main> and add css in it
     const div = document.createElement('div');
     div.id = 'realtwit-root';
     document.body.appendChild(div);
