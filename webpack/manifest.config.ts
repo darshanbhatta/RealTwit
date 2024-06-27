@@ -26,13 +26,13 @@ export function getManifest(mode: Environment, browser: Browser, version: string
             // hardcode the key for development builds
             key: process.env.MANIFEST_KEY,
             permissions: ['storage', 'background'],
-            host_permissions: ['https://*.twitter.com/*', 'https://realtwit.org/*'],
+            host_permissions: ['https://*.twitter.com/*', 'https://realtwit.org/*', 'https://*.x.com/*'],
             background: {
                 service_worker: 'static/js/background.js',
             },
             content_scripts: [
                 {
-                    matches: ['https://*.twitter.com/*', 'https://realtwit.org/*'],
+                    matches: ['https://*.twitter.com/*', 'https://realtwit.org/*', 'https://*.x.com/*'],
                     css: ['/static/css/content.css'],
                     js: ['/static/js/content.js'],
                 },
@@ -40,7 +40,7 @@ export function getManifest(mode: Environment, browser: Browser, version: string
             web_accessible_resources: [
                 {
                     resources: ['static/media/*', '*'],
-                    matches: ['https://*.twitter.com/*', 'https://realtwit.com/*'],
+                    matches: ['https://*.twitter.com/*', 'https://realtwit.com/*', 'https://*.x.com/*'],
                 },
             ],
             icons: {

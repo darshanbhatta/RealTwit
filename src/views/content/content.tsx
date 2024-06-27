@@ -3,8 +3,10 @@ import { ContextInvalidated, onContextInvalidated } from 'chrome-extension-toolk
 import { createRoot } from 'react-dom/client';
 import { Main } from './components/Main/Main';
 
+const TWITTER_URLS = ['https://twitter.com', 'https://x.com'];
+
 // inject our app if they are on twitter
-if (window.location.href.includes('https://twitter.com')) {
+if (TWITTER_URLS.some(url => window.location.href.startsWith(url))) {
     injectReact();
 }
 
